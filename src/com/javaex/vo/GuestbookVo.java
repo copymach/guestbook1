@@ -27,6 +27,10 @@ public class GuestbookVo {
 		this.content = content;
 		this.regDate = regDate;
 	}
+	public GuestbookVo(int no, String password) {
+		this.no = no;
+		this.password = password;
+	}
 
 //메서드 gs
 	public int getNo() {

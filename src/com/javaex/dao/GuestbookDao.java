@@ -261,4 +261,44 @@ public class GuestbookDao {
 		return guestbookVo;
 	} // getPassword 종료
 
+
+//	삭제용 checkPassword for delete.jsp
+	public GuestbookVo checkPassword(int index) {
+
+		GuestbookVo guestbookVo = null;
+
+		this.getConnection();
+
+		try {
+			String query = "";
+			query += " select	password ";
+			query += " from guestbook ";
+			query += " where no = ? ";
+
+			pstmt = conn.prepareStatement(query);
+
+			pstmt.setInt(1, index);
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				int no = rs.getInt("no");				
+				String password = rs.getString("password");
+
+				guestbookVo = new GuestbookVo(no, password);
+			}
+
+		} catch (SQLException e) {
+			System.out.println("error:" + e);
+		}
+		this.close();
+
+		return guestbookVo;
+	} // checkPassword 종료
+
+	
+	
+
+	
+	
 } // The end of GuestbookDao method.
