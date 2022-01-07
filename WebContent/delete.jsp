@@ -8,6 +8,8 @@
 <%@ page import="com.javaex.vo.GuestbookVo"%>
 
 <%
+
+//System.out.println("delete.jsp"); 에러 탐지용
 //deleteForm 에서 받아온 id를 숫자로 바꿔준다
 int no = Integer.parseInt(request.getParameter("no"));
 
@@ -16,14 +18,9 @@ String password = request.getParameter("password");
 
 
 //guestbookDao를 메모리에 올린다.
-//GuestbookDao guestbookDao = new GuestbookVo(no, password); Vo에 생성자만들면 됨
-
 GuestbookDao guestbookDao = new GuestbookDao();
-GuestbookVo guestbookVo = new GuestbookVo();
-guestbookVo.setNo(no);
-guestbookVo.setPassword(password);
 
-guestbookDao.ContentDelete(guestbookVo);
+guestbookDao.ContentDelete(no, password);
 
 
 //비번이 맞든 틀리든 리다이렉트

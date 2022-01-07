@@ -110,7 +110,7 @@ public class GuestbookDao {
 	} // getList 종료
 
 	public void ContentInsert(GuestbookVo guestbookVo) {
-
+		System.out.println(guestbookVo);
 		getConnection();
 
 		try {
@@ -148,7 +148,10 @@ public class GuestbookDao {
 	} // contentInsert 종료
 
 	// ContentDelete 방명록글 삭제
-	public ContentDelete(int no, String password) {
+	public void ContentDelete(int no, String password) {
+		System.out.println("ContentDelete");
+		System.out.println(no);
+		System.out.println(password);
 		GuestbookVo ContentDelete = null;
 		getConnection();
 
@@ -160,7 +163,6 @@ public class GuestbookDao {
 			query += " WHERE no = ? ";
 			query += " and password = ? ";
 
-			
 			System.out.println(query + "가 삭제 처리중");
 
 //			문자열을 쿼리문으로 만들기
@@ -169,7 +171,7 @@ public class GuestbookDao {
 //			바인딩
 			pstmt.setInt(1, no);
 			pstmt.setString(2, password);
-			ContentDelete = new GuestbookVo(no, password);
+			//ContentDelete = new GuestbookVo(no, password);
 //			실행
 			int count = pstmt.executeUpdate();
 
@@ -182,8 +184,8 @@ public class GuestbookDao {
 
 //		5.자원 닫기
 		close();
-		return ContentDelete;
-
+//		return ContentDelete;
+		
 	} // ContentDelete 종료
 
 //	삭제용 getNo for delete.jsp

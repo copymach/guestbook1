@@ -18,6 +18,7 @@ String regdate = request.getParameter("regdate");
 //전송된 값을 vo객체로 만들기
 GuestbookVo guestbookVo = new GuestbookVo(name, password, content, regdate);
 
+
 //저장한다
 guestbookDao.ContentInsert(guestbookVo);
 

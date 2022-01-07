@@ -29,16 +29,17 @@ String password = guestbookVo.getPassword();
 	<h2>글 삭제하려면 비밀번호를 입력하고 삭제버튼을 누르세요.</h2>
 	<br>
 
+	<h3>sql 쿼리로 삭제해보기</h3>
 	<form action="./delete.jsp" method="get">
 		<table>
 			<tr>
 				<td>방명록 글ID (type=hidden 처리예정)</td>
-				<td><input type="text" name="id" value="<%=id%>" readonly></td>
+				<td><input type="text" name="no" value="<%=id%>" readonly></td>
 			</tr>
 
 			<tr>
 				<td>비밀번호</td>
-				<td><input type="password" name="passowrd"
+				<td><input type="password" name="password"
 					value="<%=password%>">
 					<button type="submit">삭제</button></td>
 			</tr>
@@ -59,7 +60,7 @@ String password = guestbookVo.getPassword();
 
 			<tr>
 				<td>비밀번호</td>
-				<td><input type="password" name="passowrd"
+				<td><input type="password" name="password"
 					value="<%=password%>">
 					<button type="submit">삭제</button></td>
 			</tr>
