@@ -91,6 +91,8 @@ public class GuestbookDao {
 				String password = rs.getString("password");
 				String content = rs.getString("content");
 				String regDate = rs.getString("regDate");
+				content = content.replace(" ", "&nbsp;");
+				content = content.replace("\n", "<br>");
 
 				GuestbookVo guestbookVo = new GuestbookVo(no, name, password, content, regDate);
 				guestbookList.add(guestbookVo);
@@ -145,7 +147,7 @@ public class GuestbookDao {
 
 	} // contentInsert 종료
 
-	// 방명록글 삭제
+	// ContentDelete 방명록글 삭제
 	public ContentDelete(int no, String password) {
 		GuestbookVo ContentDelete = null;
 		getConnection();

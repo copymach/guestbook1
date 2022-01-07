@@ -36,7 +36,7 @@ System.out.println(guestbookList.toString());
 				<td><input type="password" name="passowrd" value=""></td>
 			</tr>
 			<tr>
-				<td colspan="4"><textarea name="content" rows="5" cols="60"
+				<td colspan="4"><textarea name="content" rows="5" cols="60" 
 						placeholder="여기에 인삿말을 적어주세요."> </textarea></td>
 			</tr>
 			<tr>

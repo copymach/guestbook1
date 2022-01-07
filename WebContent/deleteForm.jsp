@@ -33,7 +33,7 @@ String password = guestbookVo.getPassword();
 		<table>
 			<tr>
 				<td>방명록 글ID (type=hidden 처리예정)</td>
-				<td><input type="text" name="id" value="<%=id%>"></td>
+				<td><input type="text" name="id" value="<%=id%>" readonly></td>
 			</tr>
 
 			<tr>
