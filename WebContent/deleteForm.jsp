@@ -27,18 +27,44 @@ String password = guestbookVo.getPassword();
 <body>
 
 	<h2>글 삭제하려면 비밀번호를 입력하고 삭제버튼을 누르세요.</h2>
-		<br> 
+	<br>
 
 	<form action="./delete.jsp" method="get">
-		비밀번호 <input type="password" name="passowrd"  value="<%=password%>"> 
-		<br> 
-		방명록 글ID <input type="text" name="id" value="<%=id%>"> 
-		<br>
-		<button type="submit">글 삭제</button>
-	</form>
+		<table>
+			<tr>
+				<td>방명록 글ID (type=hidden 처리예정)</td>
+				<td><input type="text" name="id" value="<%=id%>"></td>
+			</tr>
 
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" name="passowrd"
+					value="<%=password%>">
+					<button type="submit">삭제</button></td>
+			</tr>
+		</table>
+	</form>
 	<br>
-	<a href="./addList.jsp"> 목록으로 돌아가기</a>
+	<br>
+	<a href="./addList.jsp"> 목록으로 돌아가기 (상대경로)</a>
+	<br>
+
+	<h3>java if로 삭제해보기</h3>
+	<form action="./delete-java.jsp" method="get">
+		<table>
+			<tr>
+				<td>방명록 글ID (type=hidden 처리예정)</td>
+				<td><input type="text" name="id" value="<%=id%>"></td>
+			</tr>
+
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" name="passowrd"
+					value="<%=password%>">
+					<button type="submit">삭제</button></td>
+			</tr>
+		</table>
+	</form>
 
 </body>
 </html>
